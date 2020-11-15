@@ -1,0 +1,12 @@
+
+Add google fonts from materialize
+https://materializecss.com/getting-started.html
+
+
+    npm install materialize-css@next
+
+    npm  install materialize
+
+
+then 
+npm install redux react-redux
