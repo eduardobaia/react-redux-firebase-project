@@ -10,3 +10,9 @@ https://materializecss.com/getting-started.html
 
 then 
 npm install redux react-redux
+
+will need also
+npm install --save redux-thunk
+
+
+next class 15
