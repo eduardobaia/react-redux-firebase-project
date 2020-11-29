@@ -23,4 +23,12 @@ registra firebase project
 
  Install packages para react redux firebase
  nmp install react-redux-firebase redux-firestore 
- 
+  
+  hummmm7
+
+
+all you need to fix the problem of “TypeError: Object(…) is not a function” is typing: 
+1- npm uninstall react-redux
+2- npm uninstall react-redux-firebase
+3- npm i --save react-redux@5.1.1 react-redux-firebase@2.2.4
+
