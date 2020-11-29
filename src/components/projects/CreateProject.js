@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { createProject } from '../../store/actions/projectActions'
-import { connext } from 'react-redux'
+import { connect } from 'react-redux'
 import { createStore } from 'redux'
 
 
@@ -20,6 +20,8 @@ class CreateProject extends Component {
         e.preventDefault();
         console.log(this.state)
         this.props.createProject(this.state)
+        //State is the object who will be persisted in database.
+        
     }
 
     render() {

@@ -16,3 +16,11 @@ npm install --save redux-thunk
 
 
 next class 15
+
+
+registra firebase project
+ then nmp install firebase.
+
+ Install packages para react redux firebase
+ nmp install react-redux-firebase redux-firestore 
+ 
