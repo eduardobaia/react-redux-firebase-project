@@ -19,15 +19,23 @@ const store = createStore(
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(fbConfig),// redux bindings for firestore
-    reactReduxFirebase(fbConfig) // redux binding for firebase
+    reactReduxFirebase(fbConfig, { attachAuthIsReady: true }) // redux binding for firebase
+    //{attachAuthIsReady: true} Faz com que verifique a autenticacao antes de mostrar algo na pagina. 
   )
 );
+
+
+store.firebaseAuthIsReady.then( () => {
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}><App /></Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+})
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
