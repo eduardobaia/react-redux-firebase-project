@@ -32,3 +32,11 @@ all you need to fix the problem of “TypeError: Object(…) is not a function�
 2- npm uninstall react-redux-firebase
 3- npm i --save react-redux@5.1.1 react-redux-firebase@2.2.4
 
+
+
+#firebase
+Autenticacoes e coisas do tipo
+
+#firestore
+gravação, consultas, etc.
+ 
