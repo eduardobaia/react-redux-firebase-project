@@ -19,8 +19,10 @@ const store = createStore(
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(fbConfig),// redux bindings for firestore
-    reactReduxFirebase(fbConfig, { attachAuthIsReady: true }) // redux binding for firebase
+    reactReduxFirebase(fbConfig, {useFirestoreForProfile:true, userProfile: 'users', attachAuthIsReady: true }) // redux binding for firebase
     //{attachAuthIsReady: true} Faz com que verifique a autenticacao antes de mostrar algo na pagina. 
+    //useFirestoreForProfile:true, faz associar usuario logado a um profile
+    // serProfile: 'users' dizer que colecao esta os usuarios
   )
 );
 

@@ -40,3 +40,12 @@ Autenticacoes e coisas do tipo
 #firestore
 gravação, consultas, etc.
  
+
+
+ Instal momment 
+ para formato de datas
+
+
+ npm install moment --save  
+
+ 

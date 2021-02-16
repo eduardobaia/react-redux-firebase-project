@@ -22,6 +22,7 @@ class CreateProject extends Component {
         console.log(this.state)
         this.props.createProject(this.state)
         //State is the object who will be persisted in database.
+        this.props.history.push('/'); 
         
     }
 
