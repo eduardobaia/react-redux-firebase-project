@@ -48,4 +48,60 @@ gravação, consultas, etc.
 
  npm install moment --save  
 
- 
+
+ Configuracoes firebase
+ padrao normal
+
+1
+rules_version = '2';
+2
+service cloud.firestore {
+3
+  match /databases/{database}/documents {
+4
+    match /{document=**} {
+5
+      allow read, write: if
+6
+          request.time < timestamp.date(2021,10, 29);
+7
+    }
+8
+  }
+9
+}
+
+
+
+now, 
+apenas para pessoas autoriazadas
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /projects/{project} {
+      allow read, write: if request.auth.uid != null
+          
+    }
+  }
+}
+
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /projects/{project} {
+      allow read, write: if request.auth.uid != null
+          
+    }
+    match /users/{userId}{
+      allow create
+      allow read: if request.auth.uid != null
+      allow write: if request.auth.uid == userId
+      
+    }
+  
+  }
+}
+
+add rules 
