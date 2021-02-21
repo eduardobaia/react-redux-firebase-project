@@ -18,5 +18,23 @@ export const createProject = (project) => {
             dispatch({ type: 'CREATE_PROJECT_ERROR', err });
         });
 
+
+
+        firestore.collection('notifications').add(
+            {
+                ...project,
+                content: 'Added a new project',
+                user: profile.firstName + profile.lastName,
+                time: new Date()
+            }).then(() => {
+                dispatch({ type: 'CREATE_NOTIFICATION', project });
+            }).catch((err) => {
+                dispatch({ type: 'CREATE_NOTIFICATION_ERROR', err });
+            });
+
+
+
+
+
     }
 };
